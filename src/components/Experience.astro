@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+{
+    date: "Febrero 2015 - Enero 2018.",
+    title: "Editor multimedia / Desarrollador Web.",
+    description: "Desarrollo de material visual para proyectos, incluyendo edición de video, presentaciones, renders 3D y diseño Frontend. Gestión y registro de datos.",
+    link: "https://www.youtube.com/watch?v=3jq2qWITj7M",
+    company: "Ejercito Nacional de Colombia",
+},
+{
+    date: "Mayo 2023 - Noviembre 2023",
+    title: "Técnico de reacondicionamiento electrónico",
+    description: "Diagnóstico, reparación y control de calidad de equipos electrónicos como computadoras, móviles y tablets.",
+    company: "PCSheck Tecnología y servicios.",
+}
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

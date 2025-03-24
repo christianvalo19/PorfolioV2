@@ -1,0 +1,44 @@
+---
+const personalImageAlt = "Christian Valencia O."
+import Badge from "@/components/Badge.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import SocialPill from "@/components/SocialPill.astro"
+import Copytoclip from "@/components/Copytoclip.astro"
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-24"
+      src="/yo.jpg"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://www.linkedin.com/in/christianvalo/"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hola, soy Christian Valencia Ojeda
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-purple-200 [&>strong]:text-purple-800 [&>strong]:font-semibold dark:text-gray-300"
+  >
+  +2 años de experiencia. 
+  <strong>Desarrollador web y editor multimedia. </strong>Especializado en la creación y optimización de páginas web, animación 3D y edición de video. <br><br>
+  Enfocado en <strong>diseño visual y UX,</strong> que transforma ideas en contenido impactante.
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="https://linkedin.com/in/midudev">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+      <Copytoclip/>
+  </nav>
+</div>

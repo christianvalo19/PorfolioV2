@@ -1,0 +1,144 @@
+---
+//icons skills
+import HTML5 from '../components/icons/Html5.astro';
+import Tailwind from '../components/icons/Tailwind.astro';
+import Blender from '../components/icons/Blender.astro';
+import AstroIcon from '../components/icons/AstroIcon.astro';
+import Reactjs from '../components/icons/Reactjs.astro';
+import AfterIcon from '../components/icons/AfetIcon.astro';
+import SolidWorks from '../components/icons/SolidWorks.astro';
+import CSS from '../components/icons/CSS.astro';
+//Buttons
+import LinkButton from '../components/icons/LinkButton.astro';
+import GitHub from '../components/icons/GitHub.astro'
+import Link from '../components/icons/Link.astro'
+
+
+const TAGS = 
+  {
+    HTML:{
+      name: 'HTML5',
+      class: 'bg-[#a35910] text-white',
+      icon: HTML5,
+    },
+    TAILWIND:{
+      name: 'Tailwind CSS',
+      class: 'bg-[#3B5F7D] text-white',
+      icon: Tailwind,
+    },
+    BLENDER:{
+      name: 'Blender',
+      class: 'bg-[#AD6600] text-white',
+      icon: Blender,
+    },
+    ASTROTAG:{
+      name: 'Astro',
+      class: 'bg-[#101D59] text-white',
+      icon: AstroIcon,
+    },
+    REACTJS:{
+      name: 'ReactJs',
+      class: 'bg-[#103C63] text-white',
+      icon: Reactjs,
+    },
+    CSS:{
+      name: 'CSS',
+      class: 'bg-[#192E8F] text-white',
+      icon: CSS,
+    },
+    AFTER:{
+      name: 'Adobe After Effects',
+      class: 'bg-[#00005B] text-white',
+      icon: AfterIcon,
+    },
+    SOLID:{
+      name: 'SolidWorks',
+      class: 'bg-[#B8161C] text-white',
+      icon: SolidWorks,
+    },
+  }
+
+const PROJECTS = [
+    {
+      title: 'EG Universe – Conectando negocios con sus clientes',
+      description: 'Estoy utilizando Astro y React.js, la he desarrollado para dar visibilidad a negocios. Astro se encarga de las landing pages, mientras que React.js potencia las tiendas individuales. Aunque su enfoque principal es centralizar la información y dirigir a los clientes a los canales oficiales, también contempla la integración de una pasarela de pagos. Los negocios son pequeños emprendimientos de mis amigos y familiares.',
+      link:'https://www.linkedin.com/in/christianvalo/details/projects/',
+      github:'https://github.com/christianvalo19',
+      image:'/projects/projects03.jpg',
+      tags:[ TAGS.ASTROTAG,TAGS.HTML,TAGS.TAILWIND, TAGS.REACTJS],
+    },
+
+    {
+      title: 'Web para seguimiento de proyectos en el Ejército',
+      description:'Desarrollé una web en HTML5 y CSS para gestionar proyectos, logrando un sistema de orden sin usar JavaScript.',
+      link:'https://www.linkedin.com/in/christianvalo/details/projects/',
+      image: '/projects/projects01.jpg',
+      tags:[ TAGS.HTML,TAGS.CSS],
+    },
+
+    {
+      title: 'Exploración Visual en 3D: Diseño y Animación',
+      description: 'Colección de proyectos visuales creados a lo largo de mi experiencia profesional, incluyendo videos, animaciones y modelado 3D en diversas plataformas.',
+      link:'https://www.youtube.com/@ineedito5573',
+      image:'/projects/projects02.jpg',
+      tags:[ TAGS.SOLID, TAGS.BLENDER, TAGS.AFTER],
+    },
+  ]
+
+---
+
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img 
+          alt = {`imagen del proyecto ` + title }="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Codigo
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Vista previa
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+

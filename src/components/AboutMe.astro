@@ -1,0 +1,77 @@
+---
+const personalImageAlt = "Christian Valencia O."
+
+ //icons skills
+import Tailwind from '../components/icons/Tailwind.astro';
+import Blender from '../components/icons/Blender.astro';
+import AstroIcon from '../components/icons/AstroIcon.astro';
+import Reactjs from '../components/icons/Reactjs.astro';
+import SolidWorks from '../components/icons/SolidWorks.astro';
+
+const TAGS = 
+  {
+    ASTROTAG:{
+      name: 'Astro',
+      class: 'bg-[#101D59] text-white',
+      icon: AstroIcon,
+    },
+    TAILWIND:{
+      name: 'Tailwind CSS',
+      class: 'bg-[#3B5F7D] text-white',
+      icon: Tailwind,
+    },
+    REACTJS:{
+      name: 'ReactJs',
+      class: 'bg-[#103C63] text-white',
+      icon: Reactjs,
+    },
+    SOLID:{
+      name: 'SolidWorks',
+      class: 'bg-[#B8161C] text-white',
+      icon: SolidWorks,
+    },
+  }
+---
+
+<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+  <div
+    class="[&>p]:mb-4 [&>p>strong]:text-purple-800 dark:[&>p>strong]:text-purple-200 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+  >
+  <p>
+    Soy Christian, pero mis amigos me dicen "Való". Desde joven me apasiona el desarrollo web y la animación 3D. Hoy me dedico a 
+      <strong>crear páginas web y material 3D </strong> con diversas tecnologías.
+  </p>
+
+  <p>
+    Mi mayor fortaleza es colaborar en la parte visual de los proyectos, 
+      <strong>
+        transformando ideas en diseños 3D, páginas web, videos y contenido multimedia. 
+      </strong>
+      Actualmente, estoy ampliando mis habilidades para potenciar mi trabajo.
+  </p>
+
+  <p>
+    Toda esta experiencia me ha llevado a desarrollar 
+    <strong>
+        EG Universe
+    </strong>
+      una iniciativa donde fusiono mis tres pasiones: desarrollo web, edición multimedia y música. Con este proyecto, busco ayudar a emprendedores a mostrar sus negocios en línea y darles visibilidad con un enfoque creativo e innovador. 
+  </p><br>
+  <p class="flex flex-col items-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row text-2xl font-bold">Habilidades técnicas:</p>
+  <ul class="flex flex-column mb-2 gap-x-2">
+    {Object.values(TAGS).map((tag) => (
+      <li>
+        <span
+          class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+        >
+          <tag.icon class="size-4" />
+          {tag.name}
+        </span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+  <img width="240" height="240" src="yo2.jpg" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-purple-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
+
+</article>
