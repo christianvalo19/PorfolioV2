@@ -11,11 +11,19 @@
   },
   "dependencies": {
     "@astrojs/check": "0.5.6",
+    "@astrojs/react": "^4.2.4",
     "@astrojs/tailwind": "5.1.0",
+    "@emailjs/browser": "^4.4.1",
     "@fontsource-variable/onest": "5.0.2",
-    "astro": "4.4.5",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "astro": "^4.16.18",
     "astro-robots-txt": "1.0.0",
-    "tailwind": "^3.1.0",
+    "emailjs-com": "^3.2.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sweetalert2": "^11.19.1",
+    "tailwind": "^2.3.1",
     "tailwindcss": "3.4.1",
     "typescript": "5.3.3"
   }
